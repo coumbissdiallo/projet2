@@ -1,0 +1,800 @@
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.4); /* noir transparent */
+  backdrop-filter: blur(8px); /* effet flou derrière */
+  -webkit-backdrop-filter: blur(8px); /* pour compatibilité Safari */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.nav-link1{
+      text-decoration: none;
+      color: white;
+      }
+    .nav-link1:hover{
+    color: #bfbbc8;
+    }
+    .nav-link {
+      position: relative;
+      display: inline-block;
+      color: white;
+      font-family: 'Times New Roman', Times, serif;
+      text-decoration: none;
+      padding-bottom: 10px;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 4px; /* épaisseur de la ligne */
+      background-color: #f5862e; /* ta couleur orange */
+      transition: all 0.4s ease;
+      transform: translateX(-50%);
+    }
+    /*pour le petit fléche sur le border*/
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0; /* AU MEME NIVEAU que la ligne */
+      transform: translateX(-50%) translateY(0); /* Décalé un tout petit peu sur la ligne */
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #f5862e; /* Le triangle pointe vers le haut maintenant */
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link:hover::before {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0); /* bien posé sur la ligne */
+    }
+    .nav-link:hover {
+      color: #bfbbc8; /* ta couleur de hover */
+    }
+    
+    .zone-image{
+       
+    background-image:url(img/img2.jpg);
+    width: 100%;
+    height: 900px;
+    position: relative; /* pour positionner ses enfants en absolu */
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;/*trés important ces 3derniers pour un bg-image*/
+    }
+
+
+    .shape-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
+  background-color:rgba(245, 134, 46, 0.3);
+    backdrop-filter: blur(0px);
+  top: 58%;
+  margin-left: 170vh;
+  animation-name: flotte;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+.shape-carre{
+height: 100px;
+width: 100px;
+background-color:rgba(245, 134, 46, 0.3); 
+    backdrop-filter: blur(0px);
+position: absolute;
+top: 25%;
+margin-left: 170vh;
+animation: flotte;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+}
+
+.shape-tri{
+  width: 0px;
+  height: 0px;
+  margin-left: 15%;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom:100px solid rgba(245, 134, 46, 0.3); 
+    backdrop-filter: blur(0px);
+  position: absolute;
+  top: 15%;
+  transform: rotate(5deg);
+  animation-name: flotte;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes flotte {
+    50%{
+        transform: translateY(30px); /*À 50% de l’animation, l’élément descend de 30px verticalement (translateY(30px)).*/
+      }
+}
+
+.shape-c2{
+width: 150px;
+height: 150px;
+border-radius: 50%; 
+background-color:rgba(128, 128, 128, 0.1);
+backdrop-filter: blur(0px);
+
+}
+
+.overlay-bg {
+  position: absolute; /* important */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(8, 18, 44, 0.7); /* bleu nuit + transparence */
+  z-index: 1;
+}
+#carouselExampleSlidesOnly{
+    position: absolute;
+  z-index: 2;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+margin-left: 20%;
+}
+#h1slide, .T2, .T3 {
+  font-size: 90px; /* adapte selon ton besoin */
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+  animation: flotte 7s infinite ease-in-out;
+}
+
+/* Animation générique pour tous les titres */
+@keyframes flotte {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+.btn1{
+background-color: #f5862e;
+border: 2px solid #f5862e;
+}
+.btn1:hover{
+background-color: #4a2533;
+border-bottom: 6px solid #f5862e;
+}
+.btn-outline-secondary{
+background-color: transparent;
+border: 2px solid #f5862e;
+}
+.btn-outline-secondary:hover{
+background-color: #4a2533;
+border-bottom: 6px solid #f5862e;
+}
+#slogan{
+  position: relative;
+width: 1000px;
+height: 15rem;
+background-color: #4a2533;
+overflow: hidden;
+padding: 3rem 2rem;
+
+}
+.forme-droite{
+  position: absolute;
+width: 300px;
+top: 10px;
+right: 50px;
+height: 300px;
+background-color: aqua;
+border-top-right-radius: 100%;
+
+}
+.container-3E{
+background-color: #f9fbfd;
+width: 100%;
+height: 60rem;
+}
+
+.card-1{
+  width: 100%;
+  max-width: 22rem;
+  height: 21rem;
+  box-shadow: 0px 10px 20px rgba(0, 0,0, 0.1);
+border-radius: 12px;
+border: 5px transparent;
+transition: transform 0.5s ease-in-out; /* Transition fluide */
+}
+.card .img{
+border-radius: 12px;
+}
+
+#container-card{
+padding: 43px 6%;
+}
+.card-icon{
+  width: 90px;
+height: 90px;
+border-radius: 50%;
+background-color:#fef3e9;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin-top: 10%;
+
+}
+.card:hover{
+border-bottom: 6px solid #f5862e;
+transform: translateY(-10px); /* Monte légèrement de 5px */
+}
+
+#container-4E{
+width: 100%;
+height: 65rem;
+background-color:#f9fbfd;
+opacity: 0.7;
+  transform: translateY(30px); /* Position initiale plus basse */
+  animation: fadeInSlide 5s ease-out infinite;
+}
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0.7;
+    transform: translateY(30px); /* Partie invisible et décalée */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0); /* L'élément monte et devient visible */
+  }
+  100% {
+    opacity: 0.7;
+    transform: translateY(30px); /* Retour à la position initiale et invisible */
+  }
+}
+.highlight{
+  position: relative; /* important pour placer le ::after par rapport à ce texte */
+  display:inline-block; /* pour que le ::after suive la taille du texte */
+  font-size: 54px;
+}
+.highlight::after{
+content: "";
+height:8px ;
+background-color: rgba(248, 216, 191, 0.7);
+right: 0;
+left: 0;
+margin: 0;
+bottom: 0;
+position: absolute; /* pour positionner par rapport au texte */
+}
+.trait-anim{
+display: block;
+border: 2px solid #f5862e;
+width:13% ;
+margin-top: 24px;
+}
+.para{
+  font-family: 'Montserrat',sans serif;
+
+}
+.texte{
+  word-wrap: break-word; /* Permet aux mots longs de passer à la ligne */
+}
+.icon{
+width: 90px;
+height: 90px;
+border-radius: 50%;
+background-color: #fef3e9;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+margin-right: 7%;
+overflow: hidden;
+}
+.about-img{
+border-radius: 12px;
+border: 7px transparent;
+
+}
+.about-img img{
+width: 510px;
+height: 522px;
+border-radius: 12px;
+box-shadow: 0px 5px 5px 0px rgba(0, 0,0, 0.1);
+}
+.experience{
+width:100px;
+height: 100px;
+border-radius: 50%;
+background-color: #f5862e;
+display: flex;
+justify-content: center;
+text-align: center;
+align-items: center;
+color: white;
+position: absolute;
+/*positionnement en haut à droite , débordement*/
+top: 0;
+right: -10px;
+transform: translateY(-20%);
+}
+.experience-text strong{
+  font-size: 28px;
+  font-family: 'Montserrat' sans-serif;
+}
+.experience-text small{
+display: 14px;
+font-family: 'Montserrat'sans-serif;
+}
+
+.container-5E{
+width: 100%;
+height: 55rem;
+background-color:#f9fbfd;
+}
+.expertes{
+display: inline-block;
+position: relative;
+}
+.expertes::after{
+content: "";
+margin: 0;
+left: 0;
+bottom: 0;
+right: 0;
+height:8px ;
+position: absolute;
+background-color: rgba(248, 216, 191, 0.7);
+}
+.formes-icons{
+width: 80px;
+height: 80px;
+border-radius:50%;
+background-color:#fef3e9;
+margin-top: 13%;
+margin-bottom: 6px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#content-card2{
+padding: 43px 6%;
+
+}
+.carte2{
+height: 17rem;
+box-shadow: 5px 10px 20px rgba(0, 0,0, 0.1);
+border-radius: 10px;
+border: 5px transparent;
+transition: transform 0.5s ease-in-out; /* Transition fluide */
+}
+.carte2:hover{
+border-top: 3px solid #f5862e;
+border-bottom:none ;
+}
+#container-6E{
+width: 100%;
+height: 34rem;
+}
+.partenaires::after{
+  content: "";
+  display: block;
+  border: 2px solid rgba(248, 216, 191, 0.7);
+  width: 270px;
+  height:8px ;
+  margin-left:38%;
+  background-color: rgba(248, 216, 191, 0.7);
+}
+/*nos points-animées*/
+.Points{
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 50px;
+}
+/* Style commun à tous les points */
+.point{
+width: 12px;
+height: 12px;
+background-color: #f5862e;
+border-radius: 50%;
+margin-right: 15px;
+animation: bounce 2.5s ease-in-out infinite;
+margin-top: -40px;
+}
+/*Chaque point a un léger décalage*/
+.point:nth-child(1) {
+  animation-delay: 0s;
+}
+.point:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.point:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px); /* monte doucement jusqu'à 30% */
+  }
+  100% {
+    transform: translateY(-10px); /* reste en haut */
+  }
+
+  
+  
+}
+
+
+
+/*partie carousel-partenaires*/
+.carousel-container{
+width: 100%;
+overflow: hidden;/*il permet de cacher tout ce qui dépasse d'un élément HTML quand le contenu est plus grand que sa boite*/
+background-color: #fff;
+padding: 20px 0;
+margin: 60px 43px;
+}
+.carousel-track{
+display: flex;
+padding: 43px 6%;
+width: max-content; /*permet à lélément div de s'élargir automatiquement pour contenir toutes les images sans retour à la ligne*/ 
+animation: slidelogos 20s linear infinite; /*linear , défilement fluide glissant avec la meme vitesse*/ 
+}
+
+.carousel-track img{
+width: 250px;
+height: auto;
+margin: 0px 20px;
+flex-shrink: 0;/*l'éléments ne rétrécit jamais meme si les images ne tiennent plus dans le conteur avec cet flebox il maintient sa taille*/
+}
+
+/* Animation avec "steps" pour créer des "pauses" sur chaque logo */
+@keyframes slidelogos{
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Décale jusqu'à la moitié des logos */
+}
+
+/*partie partenaires*/
+#container-7E{
+width: 100%;
+height: 60rem;
+background-color:#eef4fb;
+padding-top: 100px;
+
+}
+    .content-7 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100px;
+    }
+
+    .sequence {
+      font-size: 2.5rem;
+      font-weight:1000;
+      font-family: 'Montserrat', sans-serif;
+      color: #2c2c50;
+      padding-left: 150px;
+    }
+
+    .word-seq {
+      display: inline-block;
+      position: relative;
+      width: 500px;
+      height: 45px;
+      margin-left: 10px;
+
+    }
+
+    .anim-span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      animation: spananim 9s infinite;
+      text-align: left;
+      color: #f5862e;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    .anim-span:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .anim-span:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .anim-span:nth-child(3) {
+      animation-delay: 6s;
+    }
+
+    @keyframes spananim {
+      0%, 100% { opacity: 0; }
+      10%, 30% { opacity: 1; }
+      40%, 100% { opacity: 0; }
+    }
+    .cercle-part{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color:darkmagenta;
+    position: absolute;
+  right: 0;
+    }
+    
+    /*section 8*/
+    #container-8E{
+    background-color:#f9fbfd;
+    width: 100%;
+    height: 172vh;
+    padding-top: 90px;
+    }
+    #content-text8 h5{
+    font-size: 2rem;
+    }
+    #content-text8 p{
+    font-size: large;
+    padding-top: 10px;
+    }
+
+    /*formulaire*/
+    .image-background{
+    width: 100%;
+    height: 100%;
+    background-image: url("img/img-maps.jpg");
+    background-size: cover; /* l'image remplit toute la carte sans déformation */
+  background-position: center; /* l'image est centrée */
+  background-repeat: no-repeat; /* évite que l'image se répète */
+  border-radius: 14px;
+  
+    }
+    .carte-form-maps{
+    width:540px;
+    height: 78vh;
+    border: none;
+    border-radius: 14px;
+    box-shadow:5px 10px 20px #c3bcbcd7 ;
+    transition: transform 0.5s ease-out; /* Transition fluide */
+    }
+    #Pcontacts{
+    padding: 40px 3%;
+    margin-left: 5%;
+    }
+    .carte-form-maps:hover{
+    border-bottom: none;
+    transform: translateY(-10px); /* Monte légèrement de 5px */
+    }
+    #body-form{
+      padding-top: 40px;
+      padding-left: 43px;
+    }
+    #body-form legend{
+    font-size:32px ;
+    margin-bottom: 20px;
+    }
+    .user-box{
+    position: relative;
+    }
+    .user-box input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0,0, 0.1);
+    outline: none;/*enlever la bordure quand on clique pour écrire*/
+    }
+    .user-box label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: rgba(0, 0,0, 0.6);
+      pointer-events:none; /*pour mettre le pointer la tite barre verticale pour écrire*/
+      transition: .5s;
+    }
+    .user-box input:focus~label,
+    .user-box input:valid~label{
+    top: -20px;
+    left: 0;
+    color: #f5862e;
+   font-size: 12px;
+      
+    }
+    .user-box input:focus{
+    border-bottom: 3px solid #f5862e;
+    }
+    .user-box-tex{
+    position: relative;
+    }
+    .user-box-tex textarea{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin-bottom:30px;
+    border: none;
+    border-bottom: 2px solid rgba(0, 0,0, 0.1);
+    outline: none;
+    }
+    .user-box-tex label{
+    position: absolute;
+    top:0 ;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    transition: .5s;
+    }
+    .user-box-tex textarea:focus~label,
+    .user-box-tex textarea:valid~label{
+      top: -20px;
+      left: 0;
+      color: #f5862e;
+    font-size: 12px;
+    }
+    
+    .user-box-tex textarea:focus{
+      border-bottom: 3px solid #f5862e;
+    }
+
+      #send-form{
+      background-color: #f5862e;
+      }
+
+      #send-form:hover{
+      background-color:#2c2c50
+      }
+
+      /*last carte du site */
+      #last-carte{
+        padding: 40px 4%;
+        margin-left: 5%;
+        margin-top: -20px;
+      }
+      .last-carte3{
+      width: 22rem;
+      height: 18rem;
+      border: none;
+      border-radius: 14px;
+      box-shadow: 5px 5px 10px rgba(0, 0,0, 0.02);
+      transition: transform 0.5s ease-in-out; /* Transition fluide */
+      }
+      .last-carte3:hover{
+      border-bottom: none;
+      }
+      .link-card3{
+        text-decoration: none;
+        color:rgba(0, 0,0, 0.7) ;
+      }
+      .link-card3:hover{
+      color: #f5862e;
+      }
+      .icons-card3{
+        width: 80px;
+        height: 80px;
+        border-radius:50%;
+        background-color:#fef3e9;
+        margin-top: 3%;
+        margin-bottom: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      
+      }
+      .last-carte3 p{
+      color: rgba(0, 0,0, 0.7) ;
+      }
+      .icons-card3:hover{
+      background-color: #f5862e;
+      }
+
+
+      /*partie footer*/
+      .footer{
+      background-image: url("img/footer-bg.png");
+      width: 100%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding-top: 30px;
+   padding-bottom: 50px; /* Ajoute du padding au lieu de height */
+      background-color: #2c2c50;
+      }
+      #container-footer{
+        padding: 40px 4%;
+        margin-left: 12%;
+      }
+      
+      .footer-entreprise{
+     display: flex;
+     flex-direction: column;
+    align-items: start;
+      }
+      .footer-title{
+    color: white;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 500;
+      }
+      .footer-title::after{
+     content: "";
+    border-bottom: 3px solid #f5862e;
+    width: 60px;
+     display: block;
+    height: 12px;
+    margin-bottom: 25px;
+      }
+      .footer-text{
+      color: #c3bcbcd7;
+      font-family: 'Montserrat' sans sans-serif;
+      font-size: 18px;
+      }
+      .footer-link a{
+     text-decoration: none;
+     color: #c3bcbcd7;
+     font-family: 'Montserrat' sans sans-serif;
+     font-size: 18px;
+      }
+      .footer-link li{
+      list-style: none;
+      margin-bottom: 10px;
+      margin-top: 10px; /* espace entre les éléments */
+      }
+      .footer-link a:hover{
+      color: #f5862e;
+      }
+      .footer-last{
+      width: 100%;
+      height: 8vh;
+      background-color:#23223f ;
+      }
+      .footer2 p{
+        color: #c3bcbcd7;
+        font-family: 'Montserrat' sans sans-serif;
+        font-size: 18px;
+      }
+      #footer-container2{
+        padding: 40px 4%;
+        margin-left: 12%;
+      }
+      .footer2{
+      justify-content: space-between;
+      }
+      .footer-legal a{
+      text-decoration: none;
+      color: #c3bcbcd7;
+        font-family: 'Montserrat' sans sans-serif;
+        font-size: 18px;
+      }
+      .footer-legal a:hover{
+      color: #f5862e;
+      }
